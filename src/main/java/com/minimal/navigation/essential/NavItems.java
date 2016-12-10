@@ -1,9 +1,8 @@
 package com.minimal.navigation.essential;
 
-import com.minimal.navigation.item.ItemNote;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import com.minimal.navigation.item.ItemBase;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
@@ -11,25 +10,20 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
  */
 public class NavItems
 {
-    public static Item note;
+    public static ItemBase note;
 
     public static void init()
     {
-        note = new ItemNote();
+        note = register(new ItemBase("note").setCreativeTab(CreativeTabs.MISC));
     }
 
-    public static void register()
-    {
-        GameRegistry.register(note);
-    }
+    private static <i extends Item> i register(i item) {
+        GameRegistry.register(item);
 
-    public static void registerRenders()
-    {
-        registerRender(note);
-    }
+        if (item instanceof ItemBase) {
+            ((ItemBase)item).registerItemModel();
+        }
 
-    private static void registerRender(Item item)
-    {
-        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
+        return item;
     }
 }

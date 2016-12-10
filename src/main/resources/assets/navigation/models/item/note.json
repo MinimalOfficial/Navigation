@@ -1,7 +1,7 @@
 {
-  "parent": "builtin/generated",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "navigation:items/note"
+    "layer0": "navigation:item/note"
   },
   "display": {
     "thirdperson": {

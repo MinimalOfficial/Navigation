@@ -22,10 +22,7 @@ public class Navigation
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
-        proxy.init();
         NavItems.init();
-        NavItems.register();
-        System.out.println("Items initialized and registered!");
     }
 
     @Mod.EventHandler
