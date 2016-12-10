@@ -1,6 +1,6 @@
 package com.minimal.navigation.essential;
 
-import com.minimal.navigation.essential.proxy.IProxy;
+import com.minimal.navigation.essential.proxy.CommonProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,11 +17,12 @@ public class Navigation
     public static Navigation instance;
 
     @SidedProxy(clientSide = Reference.CLIENT, serverSide = Reference.SERVER)
-    public static IProxy proxy;
+    public static CommonProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e)
     {
+        proxy.init();
         NavItems.init();
         NavItems.register();
         System.out.println("Items initialized and registered!");
@@ -30,7 +31,7 @@ public class Navigation
     @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
-        proxy.init();
+
     }
 
     @Mod.EventHandler

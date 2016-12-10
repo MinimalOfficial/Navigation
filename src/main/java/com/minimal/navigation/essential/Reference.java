@@ -20,7 +20,7 @@ public class Reference
 
     public static enum ENavItems
     {
-        NOTE("note", "note");
+        NOTE("note", "Note");
 
         private String unlocalizedName;
         private String registryName;
