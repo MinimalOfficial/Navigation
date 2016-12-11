@@ -1,6 +1,10 @@
 package com.minimal.navigation.essential;
 
+import com.minimal.navigation.essential.handler.TooltipHandler;
+import com.minimal.navigation.essential.init.NavCrafting;
+import com.minimal.navigation.essential.init.NavItems;
 import com.minimal.navigation.essential.proxy.CommonProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -28,12 +32,12 @@ public class Navigation
     @Mod.EventHandler
     public void init(FMLInitializationEvent e)
     {
-
+        NavCrafting.init();
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent e)
     {
-
+        MinecraftForge.EVENT_BUS.register(new TooltipHandler());
     }
 }

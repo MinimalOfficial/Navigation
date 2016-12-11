@@ -1,1 +1,3 @@
-item.note.name=Empty Note
+item.empty_note.name=Empty Note
+item.note.name=Note
+item.upcomp.name=Upgradable Compass

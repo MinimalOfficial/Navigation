@@ -1,16 +1,18 @@
 package com.minimal.navigation.item;
 
-import com.minimal.navigation.essential.Reference;
-import net.minecraft.item.Item;
-
 /**
  * Created by Minimal on 10/12/2016.
  */
-public class ItemNote extends Item
+public class ItemNote extends ItemBase
 {
-    public ItemNote()
+    public static double x;
+    public static double y;
+    public static double z;
+    public static int lastSavedid = 0;
+
+    public ItemNote(String name)
     {
-        setUnlocalizedName(Reference.ENavItems.NOTE.getUnlocalizedName());
-        setRegistryName(Reference.ENavItems.NOTE.getRegistryName());
+        super(name);
     }
+
 }

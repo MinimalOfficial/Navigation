@@ -1,6 +1,5 @@
 package com.minimal.navigation.essential.proxy;
 
-import com.minimal.navigation.essential.NavItems;
 import com.minimal.navigation.essential.Reference;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
